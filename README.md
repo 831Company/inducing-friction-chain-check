@@ -31,6 +31,19 @@ what it cannot know. It is the free first step of the 831 verifier family; it do
 
 ## Verify the download before you run it
 
+> **v0.1.1 ERRATUM — read this first.** The `HOW-TO-VERIFY.md` bundled inside the v0.1.1 ZIP prints the
+> signature check with the wrong principal (`-I 831-company`) and that line fails. The bundled file is
+> preserved as released; the corrected check is:
+>
+> ```
+> ssh-keygen -Y verify -f allowed_signers -I 831-chain-check-release -n 831-chain-check-release -s SHA256SUMS.sig < SHA256SUMS
+> ```
+>
+> Before it, confirm the signing key: `ssh-keygen -lf allowed_signers` must read
+> `SHA256:2IRv4ycANEkqBJSYK3l5obP55I+a62/iji9yNpPYbFA`. The full corrected procedure is this
+> repository's HOW-TO-VERIFY.md. The next release carries the correction inside the package.
+
+
 Each release carries `831-chain-check-v0.1.1.zip`, `SHA256SUMS`, `SHA256SUMS.sig` and `allowed_signers`.
 The steps are in HOW-TO-VERIFY.md, section 0. **Confirm the signing key first:** the release key's
 fingerprint is **SHA256:2IRv4ycANEkqBJSYK3l5obP55I+a62/iji9yNpPYbFA**, published here and on

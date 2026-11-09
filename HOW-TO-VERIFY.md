@@ -6,8 +6,7 @@
    ssh-keygen -lf allowed_signers
    ```
    The fingerprint must read **SHA256:2IRv4ycANEkqBJSYK3l5obP55I+a62/iji9yNpPYbFA** — the fingerprint of
-   the one-purpose release key, published here and on inducingfriction.com, two surfaces a single
-   attacker does not hold at once. If it reads anything else, stop: the files did not come from the
+   the one-purpose release key, published here and on inducingfriction.com for cross-checking. If it reads anything else, stop: the files did not come from the
    key we publish. A signature that verifies against a key you have not confirmed this way proves the
    bytes match that key — it does not prove the publisher. Then check the sums and the signature:
    ```
