@@ -31,5 +31,9 @@ what it cannot know. It is the free first step of the 831 verifier family; it do
 
 ## Verify the download before you run it
 
-Each release carries `831-chain-check-v0.1.1.zip`, `SHA256SUMS` and `SHA256SUMS.sig`. The steps are in
-HOW-TO-VERIFY.md, section 0.
+Each release carries `831-chain-check-v0.1.1.zip`, `SHA256SUMS`, `SHA256SUMS.sig` and `allowed_signers`.
+The steps are in HOW-TO-VERIFY.md, section 0. **Confirm the signing key first:** the release key's
+fingerprint is **SHA256:2IRv4ycANEkqBJSYK3l5obP55I+a62/iji9yNpPYbFA**, published here and on
+inducingfriction.com. `allowed_signers` travels with the files it vouches for, so check its fingerprint
+(`ssh-keygen -lf allowed_signers`) against the value above before trusting a "Good" result — a verified
+signature against an unconfirmed key proves the bytes, not the publisher.
